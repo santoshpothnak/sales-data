@@ -1,15 +1,15 @@
-Product ID,Product Name,Avg Unit Price
-1,QuantumXcel,2304.6
-2,SynthoPulse,2285.5
-3,ElectroFlex,2194.3
-4,NanoGlide,2121.6
-5,CyberOptix,2349.2
-6,GenoSync,2318.4
-7,TechNerve,2313.7
-8,BioSync,2290
-9,InfraCircuit,2171.3
-10,OptoMatrix,2214.6
-11,BioTronic,2295.3
-12,HyperWave,2300.5
-13,NeuroSync,2198.2
-14,PhotonXpert,2409.5
+Product ID,Product Name
+1,QuantumXcel
+2,SynthoPulse
+3,ElectroFlex
+4,NanoGlide
+5,CyberOptix
+6,GenoSync
+7,TechNerve
+8,BioSync
+9,InfraCircuit
+10,OptoMatrix
+11,BioTronic
+12,HyperWave
+13,NeuroSync
+14,PhotonXpert
