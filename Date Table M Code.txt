@@ -28,4 +28,4 @@ in
 in
     fnDateTable
 
-/* Query( List.Min(Sales[Order Date]),  Date.AddDays(List.Max(Sales[Ship Date]), 4), 4) */
+/* Query( List.Min(Sales[Order Date]),  Date.AddDays(List.Max(Sales[Ship Date]), 1), 4) */
