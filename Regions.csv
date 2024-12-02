@@ -1,4 +1,4 @@
-﻿Region ID,Country,Suburb,City,postcode,Longitude,Latitude,Full Address
+region_id,country,suburb,city,postcode,longitude,latitude,full_address
 1,New Zealand,Freemans Bay,Auckland,1011,174.748652,-36.855732,"Picton Street, Freemans Bay, Auckland"
 2,New Zealand,Nightcaps,Southland,9630,168.028823,-45.9703,"Lyne Street, Nightcaps, Southland"
 3,New Zealand,Northcote,North Shore,627,174.755505,-36.804712,"McBreen Avenue, Northcote, North Shore"
