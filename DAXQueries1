@@ -1,0 +1,55 @@
+DEFINE 
+    -- Total Sales
+    MEASURE Sales[Total Sales] = SUM(Sales[total_revenue])
+
+    -- Total Costs Iteration
+    MEASURE Sales[Total Costs Iteration] = SUMX(Sales, Sales[total_unit_cost] * Sales[order_quantity])
+
+    -- Total Profits
+    MEASURE Sales[Total Profits] = [Total Sales] - [Total Costs Iteration]
+
+    -- Cumulative Sales
+    MEASURE Sales[Cumulative Sales] = 
+        CALCULATE(
+            [Total Sales],
+            FILTER(
+                ALLSELECTED(Dates),
+                Dates[Date] <= MAX(Dates[Date])
+            )
+        )
+
+    -- Rolling Total (Last 7 Days)
+    MEASURE Sales[Rolling Total Eg1] = 
+        CALCULATE(
+            [Total Sales],
+            FILTER(
+                ALL(Dates),
+                Dates[Date] > MAX(Dates[Date]) - 7 &&
+                Dates[Date] <= MAX(Dates[Date])
+            )
+        )
+
+    -- Total Quantity Sold
+    MEASURE Sales[Total Quantity Sold] = SUM(Sales[order_quantity])
+
+    -- Sales Year-to-Date (YTD)
+    MEASURE Sales[Sales YTD] = 
+        CALCULATE(
+            [Total Sales],
+            DATESYTD(Dates[Date])
+        )
+
+    -- Total Transactions
+    MEASURE Sales[Total Transactions] = DISTINCTCOUNT(Sales[order_number])
+
+EVALUATE 
+    ROW(
+        "Total Sales", [Total Sales],
+        "Total Costs Iteration", [Total Costs Iteration],
+        "Total Profits", [Total Profits],
+        "Cumulative Sales", [Cumulative Sales],
+        "Rolling Total Eg1 (7 Days)", [Rolling Total Eg1],
+        "Total Quantity Sold", [Total Quantity Sold],
+        "Sales YTD", [Sales YTD],
+        "Total Transactions", [Total Transactions]
+    )
