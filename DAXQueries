@@ -1,0 +1,32 @@
+
+
+EVALUATE
+	SUMMARIZECOLUMNS(
+		Dates[Year],
+		"Total Cumulative Sales", [Cumulative Sales]
+	)
+
+
+
+EVALUATE
+    SUMMARIZECOLUMNS(
+        Dates[Year],
+        Dates[MonthName],
+        "Total Cumulative Sales", [Cumulative Sales]
+    )
+
+
+
+EVALUATE
+    SUMMARIZECOLUMNS(
+        Dates[Year],
+        "Total Cumulative Sales", [Cumulative Sales],
+        "Total Sales", [Total Sales]
+    )
+
+
+EVALUATE
+	FILTER(
+		Sales,
+		Sales[sales_channel] = "Global Sales"
+	)
